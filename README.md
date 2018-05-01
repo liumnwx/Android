@@ -1,11 +1,11 @@
 # Android
 课上实践
 
-##calculate
+## calculate
 做一个简单计算器。
 
-##Weather
+## Weather
 天气信息列表。ListView练习。
 
-##SimpleDrwaing
+## SimpleDrwaing
 简笔绘画。大概是个综合实战吧
