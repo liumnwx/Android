@@ -3,6 +3,7 @@ package com.example.aeon.simpledrawing;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -25,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPreferences=getSharedPreferences("data",0);
+        int imageId=sharedPreferences.getInt("image",0);
+        if(imageId!=0){
+            Intent intent=new Intent(MainActivity.this,PaintingActivity.class);
+            intent.putExtra("image",imageId);
+            startActivity(intent);
+        }
+
         setContentView(R.layout.activity_main);
         initPics();
         final RecyclerView recyclerView=(RecyclerView)findViewById(R.id.rv);
