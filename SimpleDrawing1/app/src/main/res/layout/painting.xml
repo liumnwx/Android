@@ -4,19 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <com.example.aeon.simpledrawing.MySurfaceView
-        android:id="@+id/surfaceview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+
 
     <ImageView
-        android:onClick="onClick"
         android:id="@+id/painting_iv"
         android:layout_width="match_parent"
         android:layout_height="391dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/linear_top" />
 
 
@@ -64,57 +59,38 @@
 
         <ImageButton
             android:id="@+id/ibtn_black"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:cropToPadding="false"
-            android:onClick="onClick"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pen_black" />
+            app:srcCompat="@android:color/black" />
 
         <ImageButton
             android:id="@+id/ibtn_bule"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:cropToPadding="false"
-            android:onClick="onClick"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pen_bule" />
+            app:srcCompat="@android:color/holo_blue_light" />
 
         <ImageButton
             android:id="@+id/ibtn_green"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:cropToPadding="false"
-            android:onClick="onClick"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pen_green" />
+            app:srcCompat="@android:color/holo_green_light" />
 
         <ImageButton
             android:id="@+id/ibtn_yellow"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:cropToPadding="false"
-            android:onClick="onClick"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pen_yellow" />
+            app:srcCompat="@android:color/holo_orange_light" />
 
         <ImageButton
             android:id="@+id/ibtn_red"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:cropToPadding="false"
-            android:onClick="onClick"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pen_red" />
+            app:srcCompat="@android:color/holo_red_light" />
     </LinearLayout>
 
 </RelativeLayout>
