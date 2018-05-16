@@ -32,7 +32,6 @@ public class PaintingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.painting);
-        imageView=(ImageView)findViewById(R.id.painting_iv);
         Intent intent = getIntent();
         final int imageId = intent.getIntExtra("image",0);
         imageView.setImageResource(imageId);

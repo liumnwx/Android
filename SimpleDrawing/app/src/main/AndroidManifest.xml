@@ -19,9 +19,8 @@
         </activity>
         <activity
             android:name=".PaintingActivity"
-            android:label="画板"
-            android:theme="@android:style/Theme.NoTitleBar"
-            />
+            android:theme="@android:style/Theme.NoTitleBar">
+            </activity>
     </application>
 
 </manifest>

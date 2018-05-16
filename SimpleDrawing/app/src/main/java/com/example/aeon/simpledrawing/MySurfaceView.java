@@ -65,7 +65,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
             case MotionEvent.ACTION_MOVE:
                 mPath.lineTo(x,y);
                 break;
-            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_UP :
                 break;
             default:
                 break;
@@ -110,7 +110,6 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     private void initCacheBitmapAndDrawBackground(boolean isFirst) {
         int view_width=getWidth();
         int view_height=getHeight();
-
         Bitmap bg_bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.banana);
         int bgBitmapWidth=bg_bitmap.getWidth();
         int bgBitmapHeight=bg_bitmap.getHeight();
@@ -122,7 +121,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
         Matrix matrix=new Matrix();
         float scale=1.0f;
-        int left = 0,top=0;
+        int left,top;
         if(bgBitmapWidth<=view_width&&bgBitmapHeight<=view_height){
             left=(view_width-bgBitmapWidth)/2;
             top=(view_height-bgBitmapHeight)/2;
