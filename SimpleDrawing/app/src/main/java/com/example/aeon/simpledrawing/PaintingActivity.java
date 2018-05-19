@@ -1,5 +1,6 @@
 package com.example.aeon.simpledrawing;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,8 +21,8 @@ import android.widget.ImageView;
 
 
 
-public class PaintingActivity extends AppCompatActivity {
-    private ImageView imageView;
+public class PaintingActivity extends Activity {
+
     private Button btn_save;
     private Button btn_re;
     private Button btn_clear;
@@ -32,33 +33,21 @@ public class PaintingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.painting);
-        Intent intent = getIntent();
-        final int imageId = intent.getIntExtra("image",0);
-        imageView.setImageResource(imageId);
         surfaceView=(MySurfaceView)findViewById(R.id.surfaceview);
+
+        Intent intent = getIntent();
+        int imageId = intent.getIntExtra("image",0);
+        surfaceView.setImageId(imageId);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("image",imageId);
+        editor.apply();
+
         lastSelectPen=findViewById(R.id.ibtn_black);
         lastSelectPen.startAnimation(AnimationUtils.loadAnimation(PaintingActivity.this,
                 R.anim.scale_zoom_out_anim));
-        btn_save = findViewById(R.id.btn_save);
-        btn_re=findViewById(R.id.btn_re);
         btn_clear=findViewById(R.id.btn_clear);
-        btn_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences("data", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("image",imageId);
-                editor.apply();
-            }
-        });
-        btn_re.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences=getSharedPreferences("data",Context.MODE_PRIVATE);
-                int old = sharedPreferences.getInt("image",imageId);
-                imageView.setImageResource(old);
-            }
-        });
     }
 
     private void playAnim(View v) {
@@ -80,6 +69,18 @@ public class PaintingActivity extends AppCompatActivity {
                 break;
             case R.id.btn_clear:
                 surfaceView.clean();
+                break;
+            case R.id.ibtn_red:
+                playAnim(v);
+                surfaceView.setRedPaint();
+                break;
+            case R.id.ibtn_bule:
+                playAnim(v);
+                surfaceView.setBulePaint();
+                break;
+            case R.id.ibtn_green:
+                playAnim(v);
+                surfaceView.setGreenPaint();
                 break;
         }
     }
