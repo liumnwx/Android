@@ -30,27 +30,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         SharedPreferences sharedPreferences=getSharedPreferences("data",0);
         int imageId=sharedPreferences.getInt("image",0);
-        Log.i("MainActivity", "achi1");
         if(imageId!=0){
-            Log.i("MainActivity", "achi");
             Intent intent=new Intent(MainActivity.this,PaintingActivity.class);
             intent.putExtra("image",imageId);
             startActivity(intent);
         }
-        Log.i("MainActivity", "achi2");
+
         setContentView(R.layout.activity_main);
-        Log.i("MainActivity", "achi3");
         initPics();
-        Log.i("MainActivity", "achi4");
         final RecyclerView recyclerView=(RecyclerView)findViewById(R.id.rv);
         GridLayoutManager  layoutManager= new GridLayoutManager(this,2);
-        Log.i("MainActivity", "achi5");
         recyclerView.setLayoutManager(layoutManager);
-        Log.i("MainActivity", "achi6");
         PicsAdapter adapter = new PicsAdapter(picsList);
-        Log.i("MainActivity", "achi7");
         recyclerView.setAdapter(adapter);
-        Log.i("MainActivity", "ach8");
+
     }
 
     private void initPics(){

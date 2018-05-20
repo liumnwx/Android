@@ -9,8 +9,8 @@
         android:id="@+id/surfaceview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
 
     <LinearLayout
@@ -45,6 +45,29 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/Recover" />
+        <Button
+            android:id="@+id/play"
+            android:onClick="onClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Play" />
+
+        <Button
+            android:id="@+id/pause"
+            android:onClick="onClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Pause" />
+
+        <Button
+            android:id="@+id/stop"
+            android:onClick="onClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Stop" />
 
     </LinearLayout>
 
